@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/guice" />
             <option value="$PROJECT_DIR$/mybatis" />
+            <option value="$PROJECT_DIR$/noxml" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />

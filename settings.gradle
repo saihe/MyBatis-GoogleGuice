@@ -1,4 +1,4 @@
 rootProject.name = 'mybatis_googleguice'
 include 'guice'
 include 'mybatis'
-
+include 'noxml'

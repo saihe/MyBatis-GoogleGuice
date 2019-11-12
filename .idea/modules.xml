@@ -12,6 +12,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mybatis/mybatis_googleguice.mybatis.iml" filepath="$PROJECT_DIR$/.idea/modules/mybatis/mybatis_googleguice.mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mybatis/mybatis_googleguice.mybatis.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mybatis/mybatis_googleguice.mybatis.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mybatis/mybatis_googleguice.mybatis.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mybatis/mybatis_googleguice.mybatis.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/noxml/mybatis_googleguice.noxml.iml" filepath="$PROJECT_DIR$/.idea/modules/noxml/mybatis_googleguice.noxml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/noxml/mybatis_googleguice.noxml.main.iml" filepath="$PROJECT_DIR$/.idea/modules/noxml/mybatis_googleguice.noxml.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/noxml/mybatis_googleguice.noxml.test.iml" filepath="$PROJECT_DIR$/.idea/modules/noxml/mybatis_googleguice.noxml.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mybatis_googleguice.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mybatis_googleguice.test.iml" />
     </modules>
   </component>
