@@ -18,6 +18,10 @@ dependencies {
 }
 
 jar {
+    applicationDefaultJvmArgs = [
+            '-Dfile.encoding=UTF-8'
+            , '-Dmybatis-freemarker.config.file=mybatis-freemarker_production.properties'
+    ]
     manifest {
         attributes('Main-Class': mainClassName)
     }

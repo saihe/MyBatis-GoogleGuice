@@ -30,6 +30,9 @@ public class MyBatisModule extends org.mybatis.guice.MyBatisModule {
         bindTransactionFactoryType(JdbcTransactionFactory.class);
         bindDataSourceProviderType(PooledDataSourceProvider.class);
 
+        // エイリアス定義
+        addSimpleAliases("org.mybatis.scripting.freemarker.FreeMarkerLanguageDriver");
+
         // マッパークラス定義
         addMapperClass(EmployeeMapper.class);
     }

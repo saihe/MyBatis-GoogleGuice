@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.mybatis.scripting:mybatis-freemarker:1.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mybatis.scripting/mybatis-freemarker/1.2.0/9002e70740adfaf037558796308c2342f6507ed8/mybatis-freemarker-1.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mybatis.scripting/mybatis-freemarker/1.2.0/24913d17733dfc375779a54f6264f3e102cc55d1/mybatis-freemarker-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

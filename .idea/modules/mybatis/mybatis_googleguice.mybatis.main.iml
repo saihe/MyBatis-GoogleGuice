@@ -17,15 +17,18 @@
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.2.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.mybatis.scripting:mybatis-freemarker:1.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-text:1.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.9" level="project" />
     <orderEntry type="library" name="Gradle: commons-io:commons-io:2.6" level="project" />
     <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.18" level="project" />
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.41" level="project" />
     <orderEntry type="library" name="Gradle: org.mybatis:mybatis-guice:3.10" level="project" />
-    <orderEntry type="library" name="Gradle: org.mybatis:mybatis:3.2.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.mybatis:mybatis:3.5.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:guava:19.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.freemarker:freemarker:2.3.28" level="project" />
   </component>
 </module>
