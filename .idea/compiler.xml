@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="mybatis_googleguice.guice.main" target="1.8" />
+      <module name="mybatis_googleguice.guice.test" target="1.8" />
+      <module name="mybatis_googleguice.main" target="1.8" />
+      <module name="mybatis_googleguice.mybatis.main" target="1.8" />
+      <module name="mybatis_googleguice.mybatis.test" target="1.8" />
+      <module name="mybatis_googleguice.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

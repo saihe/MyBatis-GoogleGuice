@@ -13,21 +13,51 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+subprojects {
+    apply plugin: "java"
+    apply plugin: "eclipse-wtp"
+    apply plugin: "idea"
 
-    compileOnly module ('org.projectlombok:lombok:1.18.8')
-    annotationProcessor ('org.projectlombok:lombok:1.18.8')
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 
-    compile 'mysql:mysql-connector-java:5.1.41'
-    compile group: 'org.mybatis', name: 'mybatis-guice', version: '3.10'
-    compile group: 'org.mybatis', name: 'mybatis', version: '3.2.2'
-    compile group: 'com.google.inject', name: 'guice', version: '4.0'
-}
+    compileJava.options.encoding = "UTF-8"
+    compileTestJava.options.encoding = "UTF-8"
+    javadoc.options.encoding = "UTF-8"
 
-jar {
-    manifest {
-        attributes('Main-Class': mainClassName)
+    sourceSets {
+        main {
+            java.srcDirs = ["src/main/java"]
+            resources.srcDirs = ["src/main/resources"]
+        }
+        test {
+            java.srcDirs = ["src/test/java"]
+            resources.srcDirs = ["src/test/resources"]
+        }
     }
-    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // 最初から入ってるやつ
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+
+        // 基本入れるいつものやつ
+        annotationProcessor("org.projectlombok:lombok:1.16.20")
+        compile("org.projectlombok:lombok:1.16.20")
+        compile 'org.slf4j:slf4j-api:1.7.25'
+        compile 'ch.qos.logback:logback-classic:1.2.3'
+        compile 'ch.qos.logback:logback-core:1.2.3'
+
+        // 適宜入れるやつ
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+        compile group: 'commons-io', name: 'commons-io', version: '2.6'
+
+        compile 'mysql:mysql-connector-java:5.1.41'
+        compile group: 'org.mybatis', name: 'mybatis-guice', version: '3.10'
+        compile group: 'org.mybatis', name: 'mybatis', version: '3.2.2'
+        compile group: 'com.google.inject', name: 'guice', version: '4.0'
+    }
 }
