@@ -1,11 +1,15 @@
-import com.google.inject.Inject;
-import mapper.EmployeeMapper;
+import dao.EmployeeDao;
+import entities.Employee;
+import utils.DaoUtil;
+
+import java.util.List;
+
+import static utils.SystemUtil.print;
 
 public class Runner {
-    @Inject
-    private EmployeeMapper employeeMapper;
-
     public void run() {
-
+        EmployeeDao employeeDao = DaoUtil.getDao(EmployeeDao.class);
+        List<Employee> employeeList = employeeDao.all();
+        employeeList.forEach(e -> print(e.toString()));
     }
 }
