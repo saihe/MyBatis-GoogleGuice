@@ -1,45 +1,36 @@
 package modules;
 
-import com.google.inject.Binder;
 import com.google.inject.name.Names;
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-import lombok.Getter;
 import mapper.EmployeeMapper;
-import org.apache.ibatis.datasource.DataSourceFactory;
-import org.apache.ibatis.transaction.Transaction;
-import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
-import org.apache.ibatis.transaction.managed.ManagedTransactionFactory;
 import org.mybatis.guice.datasource.builtin.PooledDataSourceProvider;
-import org.mybatis.guice.datasource.helper.JdbcHelper;
+import properties.MyBatisProperties;
 
-import javax.sql.DataSource;
 import java.util.Properties;
 
 public class MyBatisModule extends org.mybatis.guice.MyBatisModule {
-    @Getter
-    private Properties properties;
-
-    public MyBatisModule() {
-        properties = new Properties();
-        properties.setProperty("mybatis.environment.id", "test");
-        properties.setProperty("JDBC.driver", "com.mysql.jdbc.Driver");
-        properties.setProperty("JDBC.url", "jdbc:mysql://lams-lbn.com:3306/test");
-        properties.setProperty("JDBC.schema", "test");
-        properties.setProperty("derby.create", "true");
-        properties.setProperty("JDBC.username", "test");
-        properties.setProperty("JDBC.password", "test");
-        properties.setProperty("JDBC.autoCommit", "false");
-    }
-
     @Override
     protected void initialize() {
-//        install(JdbcHelper.MySQL);
+        // MyBatis用設定
+        Properties properties = new Properties();
+        MyBatisProperties myBatisProperties = new MyBatisProperties().init();
+        properties.setProperty("mybatis.environment.id", myBatisProperties.getEnvironmentId());
+        properties.setProperty("JDBC.driver", myBatisProperties.getDriver());
+        properties.setProperty("JDBC.url", myBatisProperties.getUrl());
+        properties.setProperty("JDBC.schema", myBatisProperties.getSchema());
+        properties.setProperty("JDBC.username", myBatisProperties.getUsername());
+        properties.setProperty("JDBC.password", myBatisProperties.getPassword());
+        properties.setProperty("JDBC.autoCommit", myBatisProperties.getAutocommit());
+        properties.setProperty("derby.create", myBatisProperties.getDerbyCreate());
+
+        // 設定反映
         Names.bindProperties(binder(), properties);
+
+        // その他必要なバインド
         bindTransactionFactoryType(JdbcTransactionFactory.class);
         bindDataSourceProviderType(PooledDataSourceProvider.class);
-//        bind(DataSource.class).toProvider(MysqlDataSource::new);
-//        bind(TransactionFactory.class).to(ManagedTransactionFactory.class);
+
+        // マッパークラス定義
         addMapperClass(EmployeeMapper.class);
     }
 }

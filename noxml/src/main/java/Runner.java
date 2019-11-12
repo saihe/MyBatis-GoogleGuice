@@ -4,7 +4,8 @@ import mapper.EmployeeMapper;
 
 import java.util.List;
 
-import static utils.SystemUtil.print;
+import static utils.utils.SystemUtil.print;
+
 
 public class Runner {
     @Inject

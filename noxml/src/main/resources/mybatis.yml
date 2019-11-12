@@ -1,0 +1,8 @@
+environmentId: test
+driver: com.mysql.jdbc.Driver
+url: jdbc:mysql://lams-lbn.com:3306/test
+schema: test
+username: test
+password: test
+autocommit: false
+derbyCreate: true

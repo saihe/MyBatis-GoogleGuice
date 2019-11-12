@@ -1,10 +1,10 @@
 import dao.EmployeeDao;
 import entities.Employee;
-import utils.DaoUtil;
+import utils.utils.DaoUtil;
 
 import java.util.List;
 
-import static utils.SystemUtil.print;
+import static utils.utils.SystemUtil.print;
 
 public class Runner {
     public void run() {
