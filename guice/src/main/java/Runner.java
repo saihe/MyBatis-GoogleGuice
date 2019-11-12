@@ -1,11 +1,14 @@
 import com.google.inject.Inject;
-import mapper.EmployeeMapper;
+import servicies.OrangeService;
+
+import static utils.SystemUtil.print;
 
 public class Runner {
     @Inject
-    private EmployeeMapper employeeMapper;
+    private OrangeService orangeService;
 
     public void run() {
-
+        print("run");
+        print(orangeService.returnString());
     }
 }
