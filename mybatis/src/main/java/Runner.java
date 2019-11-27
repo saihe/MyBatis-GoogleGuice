@@ -1,7 +1,10 @@
 import dao.EmployeeDao;
 import entities.Employee;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import utils.utils.DaoUtil;
 
+import javax.security.auth.login.Configuration;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -14,9 +17,23 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Runner {
+
+    private EmployeeDao employeeDao = DaoUtil.getDao(EmployeeDao.class);
+
     public void run() {
+    }
+
+    private void selectAll() {
+        try{
+//            SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(Configuration.getInstance("environment",));
+            employeeDao.all();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void buildInsert() {
         int dividePoint = 100;
-        EmployeeDao employeeDao = DaoUtil.getDao(EmployeeDao.class);
         try {
             List<Employee> employeeList = new ArrayList<>();
             try(

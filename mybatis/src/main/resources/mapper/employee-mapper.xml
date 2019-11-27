@@ -11,12 +11,12 @@
     </resultMap>
     <select id="all" resultMap="employeeMap">
         SELECT
-            id
-            , name
-            , mail
-            , department_id
+        id
+        , name
+        , mail
+        , department_id
         FROM
-            employee
+        employee
     </select>
     <insert id="insert" parameterType="employee">
         insert into

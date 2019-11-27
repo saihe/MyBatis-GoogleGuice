@@ -8,14 +8,23 @@
                 type="entities.Employee"
                 alias="Employee" />
     </typeAliases>
-    <environments default="development">
-        <environment id="development">
+    <environments default="mysql">
+        <environment id="mysql">
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver" />
                 <property name="url" value="jdbc:mysql://lams-lbn.com:3306/test" />
                 <property name="username" value="test" />
                 <property name="password" value="test" />
+            </dataSource>
+        </environment>
+        <environment id="oracle">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.amazon.redshift.jdbc42.Driver" />
+                <property name="url" value="dbc:redshift://adb.ap-tokyo-1.oraclecloud.com:1522/practice_tp" />
+                <property name="username" value="practice_user" />
+                <property name="password" value="Password1234" />
             </dataSource>
         </environment>
     </environments>
