@@ -36,12 +36,14 @@
             name
             , mail
             , department_id
+            , entry_datetime
         ) values
         <foreach collection="list" item="item" separator=",">
             (
                 #{item.name}
                 , #{item.mail}
                 , #{item.departmentId}
+                , #{item.entryDatetime}
             )
         </foreach>
     </insert>

@@ -15,18 +15,6 @@ import java.util.stream.Stream;
 public class Runner {
     public void run() {
         EmployeeDao employeeDao = DaoUtil.getDao(EmployeeDao.class);
-//        List<Employee> employeeList = employeeDao.all();
-//        employeeList.forEach(e -> print(e.toString()));
-//        try {
-//            employeeDao.insert(new Employee(
-//                    null
-//                    , "テスト"
-//                    , "test@test.com"
-//                    , 1
-//            ));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
         try {
             List<Employee> employeeList = new ArrayList<>();
             try (
@@ -40,7 +28,8 @@ public class Runner {
                         null
                         , row.split(Pattern.quote(","))[1]
                         , row.split(Pattern.quote(","))[2]
-                        , Integer.parseInt(row.split(Pattern.quote(","))[3])
+                        , row.split(Pattern.quote(","))[3]
+                        , row.split(Pattern.quote(","))[4]
                 )).collect(Collectors.toList());
             } catch (IOException e) {
                 e.printStackTrace();
