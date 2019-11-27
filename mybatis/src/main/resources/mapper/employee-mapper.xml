@@ -18,4 +18,31 @@
         FROM
             employee
     </select>
+    <insert id="insert" parameterType="employee">
+        insert into
+        employee (
+            name
+            , mail
+            , department_id
+        ) values (
+            #{name}
+            , #{mail}
+            , #{departmentId}
+        )
+    </insert>
+    <insert id="insertList" parameterType="java.util.List">
+        insert into
+        employee (
+            name
+            , mail
+            , department_id
+        ) values
+        <foreach collection="list" item="item" separator=",">
+            (
+                #{item.name}
+                , #{item.mail}
+                , #{item.departmentId}
+            )
+        </foreach>
+    </insert>
 </mapper>
