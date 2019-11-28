@@ -1,4 +1,4 @@
-package utils.utils;
+package utils;
 
 public class SystemUtil {
 

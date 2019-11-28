@@ -8,15 +8,17 @@
         <result property="name" column="name" />
         <result property="mail" column="mail" />
         <result property="departmentId" column="department_id" />
+        <result property="entryDatetime" column="entry_datetime" />
     </resultMap>
-    <select id="all" resultMap="employeeMap">
+    <select id="all" resultType="java.util.List">
         SELECT
-        id
-        , name
-        , mail
-        , department_id
+            id
+            , name
+            , mail
+            , department_id as departmentId
+            , entry_datetime as entryDatetime
         FROM
-        employee
+            admin.employee
     </select>
     <insert id="insert" parameterType="employee">
         insert into

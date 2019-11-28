@@ -1,4 +1,4 @@
-package utils.utils;
+package utils;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
