@@ -1,25 +1,35 @@
+import dao.Dao;
 import dao.EmployeeDao;
 import entities.Employee;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import utils.DaoUtil;
-import utils.SystemUtil;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static utils.SystemUtil.print;
 
 public class Runner {
 
-    private EmployeeDao employeeDao = DaoUtil.getDao(EmployeeDao.class);
 
     public void run() {
-        selectAll();
+//        selectAll(EmployeeDao.class);
+        selectAny(EmployeeDao.class, Arrays.asList(new Integer[]{1, 2, 3, 4, 5}));
     }
 
-    private void selectAll() {
+    private void selectAll(Class<? extends Dao> dao) {
         try {
-            employeeDao.all().forEach(employee -> print(employee.toString()));
+            List<Employee> employeeList = DaoUtil.getDao(dao).all();
+            employeeList.forEach(employee -> print(employee.toString()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void selectAny(Class<? extends Dao> dao, List<Integer> idList) {
+        try {
+            List<Employee> employeeList = DaoUtil.getDao(dao).selectAny(idList);
+            employeeList.forEach(employee -> print(employee.toString()));
         } catch (Exception e) {
             e.printStackTrace();
         }

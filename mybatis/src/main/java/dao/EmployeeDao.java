@@ -5,7 +5,6 @@ import entities.Employee;
 import mapper.EmployeeMapper;
 
 import java.util.List;
-import java.util.Map;
 
 public class EmployeeDao implements Dao<Employee> {
     @Inject
@@ -24,5 +23,19 @@ public class EmployeeDao implements Dao<Employee> {
     @Override
     public void insetList(List<Employee> list) {
         mapper.insertList(list);
+    }
+
+    @Override
+    public List<Employee> selectAny(List<Integer> idList) {
+        return mapper.selectAny(idList);
+    }
+
+    @Override
+    public Employee selectOne() {
+        return mapper.selectOne();
+    }
+
+    public List<Employee> select(List<Integer> idList) {
+        return mapper.selectAny(idList);
     }
 }

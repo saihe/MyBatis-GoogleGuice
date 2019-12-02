@@ -10,7 +10,7 @@
         <result property="departmentId" column="department_id" />
         <result property="entryDatetime" column="entry_datetime" />
     </resultMap>
-    <select id="all" resultType="java.util.List">
+    <select id="all" resultType="entities.Employee">
         SELECT
             id
             , name
@@ -18,7 +18,34 @@
             , department_id as departmentId
             , entry_datetime as entryDatetime
         FROM
-            admin.employee
+            employee
+    </select>
+    <select id="selectAny" resultType="entities.Employee">
+        SELECT
+            id
+            , name
+            , mail
+            , department_id as departmentId
+            , entry_datetime as entryDatetime
+        FROM
+        employee
+        <if test="idList != null">
+            where id in (
+            <foreach collection="idList" item="id" separator=",">
+                #{id}
+            </foreach>
+            )
+        </if>
+    </select>
+    <select id="selectOne" resultType="entities.Employee">
+        SELECT
+            id
+            , name
+            , mail
+            , department_id as departmentId
+            , entry_datetime as entryDatetime
+        FROM
+            employee
     </select>
     <insert id="insert" parameterType="employee">
         insert into

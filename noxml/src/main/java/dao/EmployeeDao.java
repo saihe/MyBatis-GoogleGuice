@@ -20,8 +20,8 @@ public class EmployeeDao implements Dao<Employee> {
         return mapper.one();
     }
 
-    public List<Employee> select() {
-        return mapper.selectAny();
+    public List<Employee> select(List<Integer> idList) {
+        return mapper.selectAny(idList);
     }
 
     public Employee select(Integer id) {

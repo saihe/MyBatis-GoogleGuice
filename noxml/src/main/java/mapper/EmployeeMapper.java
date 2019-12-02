@@ -22,4 +22,6 @@ public interface EmployeeMapper {
     @Lang(FreeMarkerLanguageDriver.class)
     @Select("sql/employee/select.ftl")
     Employee selectOne(@Param("id") Integer id);
+
+    List<Employee> selectAny(List<Integer> idList);
 }
